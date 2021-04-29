@@ -17,7 +17,7 @@ public class Army {
 
     public int getArmyDamage() {
         int result = 0;
-        for (MilitaryUnit unit: militaries             ) {
+        for (MilitaryUnit unit : militaries) {
             result += unit.doDamage();
         }
         return result;
@@ -28,10 +28,9 @@ public class Army {
         while (units.hasNext()) {
             MilitaryUnit unit = units.next();
             unit.sufferDamage(damage);
-            if (unit.doDamage() < 25) {
-               units.remove();
+            if (unit.getHitPoints() < 25) {
+                units.remove();
             }
-
         }
     }
 }
